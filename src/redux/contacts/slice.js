@@ -3,6 +3,7 @@ import {
   addContact,
   deleteContact,
   fetchContacts,
+  updateContact,
 } from "../contacts/operations";
 import { logout } from "../auth/operations";
 
@@ -64,16 +65,18 @@ export const contactSlice = createSlice({
         state.items = [];
         state.error = null;
         state.loading = false;
-      });
-    // .addCase(updateContact.pending, handlePending)
-    // .addCase(updateContact.fulfilled, (state, action) => {
-    //   state.loading = false;
-    //   state.error = null;
-    //   state.items = state.items.map((contact) =>
-    //     contact.id === action.payload.id ? action.payload : contact
-    //   );
-    // })
-    // .addCase(updateContact.rejected, handleRejected);
+      })
+      .addCase(updateContact.pending, handlePending)
+      .addCase(updateContact.fulfilled, (state, action) => {
+        console.log("API Response Payload:", action.payload);
+        state.loading = false;
+        state.error = null;
+        console.log(state.items);
+        state.items = state.items.map((contact) =>
+          contact.id === action.payload.id ? action.payload : contact
+        );
+      })
+      .addCase(updateContact.rejected, handleRejected);
   },
 });
 export const { openModal, closeModal } = contactSlice.actions;

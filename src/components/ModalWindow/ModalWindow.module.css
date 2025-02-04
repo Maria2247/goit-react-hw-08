@@ -1,21 +1,89 @@
 .modalContainer {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50vh;
+  background-color: hsl(60, 80%, 90%);
+  border-radius: 4px;
+  box-shadow: 4px 4px 20px #6a6969;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 80%;
   display: flex;
-  transform: translateX(100%);
-
+  transform: translate(100%);
   align-items: center;
   justify-content: center;
-  transition: all 1s ease-in;
+  transition: opacity 3s ease;
   opacity: 0;
 }
 
 .isOpen {
   opacity: 1;
-  transform: translate(0);
+  transform: translate(-50%, -50%);
+}
+
+.modalUpdate {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 4px 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: #fafad2;
+  border: 1px solid rgb(167, 162, 162);
+  font-size: 16px;
+  color: #5c4033;
+}
+
+.text {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: block;
+  width: 50%;
+  color: #5c4033;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  outline: none;
+}
+.btnGreen {
+  margin-bottom: 10px;
+  background-color: #95deb1;
+  border: #d3d3d3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnGreen:hover {
+  background-color: #3a7952;
+  outline: none;
+  color: rgb(247, 247, 232);
+}
+
+.btnRed {
+  background-color: rgba(234, 86, 108, 0.5);
+  border: #d3d3d3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnRed:hover {
+  background-color: rgba(234, 86, 108);
+  outline: none;
+  color: rgb(247, 247, 232);
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
 }

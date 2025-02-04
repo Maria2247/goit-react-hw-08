@@ -25,7 +25,7 @@ export default function ContactForm() {
       })
     );
     toast.success(`Contact ${values.name} added successfully`, {
-      duration: 5000,
+      duration: 4000,
       position: "top-center",
       fontSize: "22px",
       padding: "16px",

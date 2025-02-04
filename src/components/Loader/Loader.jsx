@@ -8,7 +8,7 @@ export default function Loader() {
       height="40"
       width="40"
       ariaLabel="hourglass-loading"
-      colors={["#3a7952", "##9edbb5"]}
+      colors={["#3a7952", "#95deb1"]}
       wrapperClass={css.loader}
     />
   );

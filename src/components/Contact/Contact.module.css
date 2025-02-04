@@ -1,4 +1,61 @@
-.btn:hover {
-  background-color: #bc1f1f;
-  color: #f7f7e8;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  box-shadow: 4px 4px 20px #6a6969;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text {
+  font-size: 22px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #5c4033;
+}
+
+.btnGreen {
+  background-color: #95deb1;
+  border: #d3d3d3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnGreen:hover {
+  background-color: #3a7952;
+  outline: none;
+  color: rgb(247, 247, 232);
+}
+
+.btnGreen:focus {
+  outline: none;
+}
+
+.btnRed {
+  background-color: rgba(234, 86, 108, 0.5);
+  border: #d3d3d3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnRed:hover {
+  background-color: rgba(234, 86, 108);
+  outline: none;
+  color: rgb(247, 247, 232);
+}
+
+.btnRed:focus {
+  outline: none;
 }

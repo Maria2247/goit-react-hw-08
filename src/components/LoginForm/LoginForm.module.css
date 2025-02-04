@@ -1,4 +1,4 @@
-.form {
+.container {
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.4);
@@ -8,11 +8,21 @@
   margin: 40px auto;
   max-width: 400px;
 }
-.label {
-  margin-top: 15px;
+
+.header {
+  text-align: center;
+  font-size: 26px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
 .input {
   display: inline-block;
+  width: 100%;
   font-size: 20px;
   line-height: 1.5;
   padding: 4px 16px;
@@ -20,8 +30,30 @@
   border-radius: 4px;
   background-color: #fafad2;
   border: 1px solid rgb(167, 162, 162);
+  color: #5c4033;
   font-size: 16px;
 }
+
+.passwordContainer {
+  position: relative;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #5c4033;
+}
+
+.eyeBtn:hover,
+.eyeBtn:focus,
+.eyeBtn:active {
+  outline: none;
+}
+
 .btn {
   width: 50%;
   font-size: 24px;
@@ -35,16 +67,8 @@
 }
 
 .btn:hover,
-.btn:active {
+.btn:focus {
   background-color: #3a7952;
   outline: none;
-  color: #f7f7e8;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.error {
-  color: #ea566c;
+  color: rgb(247, 247, 232);
 }

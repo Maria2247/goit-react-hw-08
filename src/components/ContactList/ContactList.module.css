@@ -2,17 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  padding: 40px 100px;
 }
 
 .listItem {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 300px;
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 10px;
+  list-style: none;
+  width: calc((100% - 40px) / 3);
 }

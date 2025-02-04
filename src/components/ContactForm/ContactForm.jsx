@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
+import { addContact } from "../../redux/contacts/operations";
 import * as Yup from "yup";
 import css from "../ContactForm/ContactForm.module.css";
-import { addContact } from "../../redux/contactsOps";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -23,6 +24,16 @@ export default function ContactForm() {
         number: values.number,
       })
     );
+    toast.success(`Contact ${values.name} added successfully`, {
+      duration: 5000,
+      position: "top-center",
+      fontSize: "22px",
+      padding: "16px",
+      iconTheme: {
+        primary: "#3a7952",
+        secondary: "#95deb1",
+      },
+    });
     actions.resetForm();
   };
 
@@ -60,6 +71,7 @@ export default function ContactForm() {
           </button>
         </Form>
       </Formik>
+      <Toaster />
     </div>
   );
 }

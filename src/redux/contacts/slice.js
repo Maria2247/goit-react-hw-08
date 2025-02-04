@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addContact, deleteContact, fetchContacts } from "./contactsOps";
+import {
+  addContact,
+  deleteContact,
+  fetchContacts,
+} from "../contacts/operations";
+import { logout } from "../auth/operations";
 
 const handlePending = (state) => {
   state.error = null;
@@ -17,6 +22,18 @@ export const contactSlice = createSlice({
     items: [],
     loading: false,
     error: null,
+    modalIsOpen: false,
+    modalData: null,
+  },
+  reducers: {
+    openModal(state, action) {
+      state.modalIsOpen = true;
+      state.modalData = action.payload;
+    },
+    closeModal(state) {
+      state.modalIsOpen = false;
+      state.modalData = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -42,8 +59,22 @@ export const contactSlice = createSlice({
           (contact) => contact.id !== action.payload.id
         );
       })
-      .addCase(deleteContact.rejected, handleRejected);
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(logout.fulfilled, (state) => {
+        state.items = [];
+        state.error = null;
+        state.loading = false;
+      });
+    // .addCase(updateContact.pending, handlePending)
+    // .addCase(updateContact.fulfilled, (state, action) => {
+    //   state.loading = false;
+    //   state.error = null;
+    //   state.items = state.items.map((contact) =>
+    //     contact.id === action.payload.id ? action.payload : contact
+    //   );
+    // })
+    // .addCase(updateContact.rejected, handleRejected);
   },
 });
-
+export const { openModal, closeModal } = contactSlice.actions;
 export default contactSlice.reducer;

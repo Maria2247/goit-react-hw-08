@@ -6,9 +6,8 @@ export default function Error() {
     toast.error("Oops, something is wrong...", {
       id: "error-toast",
       duration: 5000,
-      position: "bottom-center",
+      position: "top-right",
       color: "#bc1f1f",
-      padding: "15px",
       border: "1px solid #bc1f1f",
     });
   }, []);
